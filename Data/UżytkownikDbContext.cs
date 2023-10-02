@@ -10,6 +10,7 @@ namespace ProjektDaniel.Data
         }
 
         public DbSet<Użytkownik> Użytkownicy { get; set; }
+        public DbSet<Rola> Rolas { get; set; }
 
 
 

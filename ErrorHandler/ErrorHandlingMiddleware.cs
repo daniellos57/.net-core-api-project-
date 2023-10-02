@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProjektDaniel.Data;
+using ProjektDaniel.ErrorHandler;
 using System.Data.Entity.Validation;
 using System.Data.SqlClient;
 
@@ -18,6 +19,11 @@ public class ErrorHandlingMiddleware
         try
         {
             await _next(context);
+        }
+        catch(BadRequestException badRequestException)
+        {
+            context.Response.StatusCode = 400;
+            await context.Response.WriteAsync(badRequestException.Message);
         }
         catch (DbEntityValidationException ex)
         {

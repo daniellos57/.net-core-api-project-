@@ -21,6 +21,7 @@ public partial class Użytkownik
 
     [StringLength(100)]
     public string? Email { get; set; }
+    public string? PasswordHash { get; set; }
 
     [Column("Id_przełożonego")]
     public int? IdPrzełożonego { get; set; }

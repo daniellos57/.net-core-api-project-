@@ -1,16 +1,12 @@
-﻿    using System.Collections.Generic;
-using System.Linq;
-using ProjektDaniel.Data;
+﻿using ProjektDaniel.Data;
 using ProjektDaniel.DTOs;
 using ProjektDaniel.Models;
-using System;
 using System.Globalization;
 using System.Text.RegularExpressions;
 
 
 using Aspose.Words;
-using Aspose.Words.Saving;
-    
+
 namespace ProjektDaniel.services
 {
     public class WniosekService

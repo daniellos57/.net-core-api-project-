@@ -4,7 +4,7 @@ using ProjektDaniel.Services;
 
 namespace ProjektDaniel.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/dane")]
     [ApiController]
     public class DaneController : ControllerBase
     {

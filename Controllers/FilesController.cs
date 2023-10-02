@@ -9,7 +9,7 @@ using System.Globalization;
 
 namespace ProjektDaniel.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/files")]
     [ApiController]
     public class FilesController : ControllerBase
     {
@@ -17,31 +17,15 @@ namespace ProjektDaniel.Controllers
         private readonly DaneWniosekDbContext _DaneWniosekDbContext; 
         private readonly WniosekService _wniosekService;
 
+
   
 
-        public FilesController(WniosekDbContext context, WniosekService wniosekService, DaneWniosekDbContext DaneWniosekDbContext)
+        public FilesController(WniosekDbContext context, WniosekService wniosekService, DaneWniosekDbContext DaneWniosekDbContext) 
         {
             _wniosekService = wniosekService;
             _context = context;
             _DaneWniosekDbContext = DaneWniosekDbContext;
-        }
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<DaneWniosekDTO>>> GetDanewniosek()
-        {
-            var danewnioseks = await _DaneWniosekDbContext.DaneWniosek
-                .Select(d => new DaneWniosekDTO
-                {
-                    Id = d.Id,
-                    ImieNazwisko = d.ImieNazwisko,
-                    IloscDni = d.IloscDni,
-                    DataUrlopu = d.DataUrlopu,
-                    NrEwidencyjny = d.NrEwidencyjny,
-                    DataWypelnienia = d.DataWypelnienia,
-                    WniosekId = d.WniosekId
-                })
-                .ToListAsync();
 
-            return danewnioseks;
         }
 
         [HttpGet("{id}")]

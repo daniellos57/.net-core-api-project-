@@ -7,7 +7,7 @@ using System.Net;
 
 namespace ProjektDaniel.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/wnioski")]
     [ApiController]
     public class WniosekController : ControllerBase
     {

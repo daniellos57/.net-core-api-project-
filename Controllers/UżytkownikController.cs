@@ -4,7 +4,7 @@ using ProjektDaniel.DTOs;
 using ProjektDaniel.services;
 namespace ProjektDaniel.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/użytkownicy")]
     [ApiController]
     public class UżytkownikController : ControllerBase
     {
@@ -55,7 +55,7 @@ namespace ProjektDaniel.Controllers
         {
             var isDeleted = _użytkownikService.UsunUzytkownika(id);
 
-            return Ok(); // Jeśli usunięcie zakończyło się sukcesem, zwracamy 204 No Content.
+            return Ok(); 
         }
 
         /*[HttpPost]
